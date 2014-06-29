@@ -69,24 +69,19 @@ int main(void)
   int i, area;
   
   for (i = 0; i < ARRAY_SIZE(modules); i++) {
-    printf("trying to load module %s...", modules[i]);
     drm.fd = drmOpen(modules[i], NULL);
     if (drm.fd < 0) {
-      printf("failed.\n");
     } else {
-      printf("success.\n");
       break;
     }
   }
   
   if (drm.fd < 0) {
-    printf("could not open drm device\n");
     return -1;
   }
   
   resources = drmModeGetResources(drm.fd);
   if (!resources) {
-    printf("drmModeGetResources failed: %s\n", strerror(errno));
     return -1;
   }
   
@@ -105,7 +100,6 @@ int main(void)
     /* we could be fancy and listen for hotplug events and wait for
      * a connector..
      */
-    printf("no connected connector!\n");
     return -1;
   }
   /* find highest resolution mode: */
