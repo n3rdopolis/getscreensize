@@ -23,7 +23,7 @@
 
 # Initialize Autoconf
 AC_PREREQ([2.60])
-AC_INIT([kmscube], [0.0.1], [https://github.com/robclark/kmscube/], [kmscube])
+AC_INIT([getscreensize], [0.0.1], [https://github.com/n3rdopolis/getscreensize/], [getscreensize])
 AC_CONFIG_SRCDIR([Makefile.am])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_AUX_DIR([build-aux])
@@ -43,7 +43,7 @@ AC_PROG_LIBTOOL
 PKG_CHECK_MODULES(DRM, libdrm)
 PKG_CHECK_MODULES(GBM, gbm)
 PKG_CHECK_MODULES(EGL, egl)
-PKG_CHECK_MODULES(GLES2, glesv2)
+#PKG_CHECK_MODULES(GLES2, glesv2)
 
 dnl ===========================================================================
 dnl check compiler flags
